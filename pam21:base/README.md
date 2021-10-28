@@ -30,3 +30,4 @@ docker run --rm --name pam.edt.org -h pam.edt.org --network 2hisix -it albert241
 
 **cosas a hacer antes de iniciar o cerrar la session de usuario**
 
+*si sufficient fracasa se ignora y continua con la siguiente autentificacion*
