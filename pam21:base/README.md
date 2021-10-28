@@ -1,34 +1,32 @@
-#PAM
+# PAM
 
 -->La seguretat de las aplicacions s'evita mitjançant pam que funcion ade forma modular(es poden posra o no posar els moduls)
 
 -->Has de configurar els programes perque utilitzin el pam
-
---> 
-
+ 
+```
 docker run --rm --name pam.edt.org -h pam.edt.org --network 2hisix -it albert241001/pam:base /bin/bash
+```
 
-# The PAM configuration file for the Shadow `chfn' service
+*# The PAM configuration file for the Shadow `chfn' service*
+**-auth    required        pam_unix.so**
+**-account sufficient      pam_permit.so**
 
--auth    required        pam_unix.so
+*authentification*
 
--account sufficient      pam_permit.so
+**authentication es demostrar que si eres pere seas pere(por ejemplo sabiendo sus credenciales/otras opciones)**
 
-*authentification
+**authoritzation (no es en pam(se parece a auth)) es una vez sabemos que eres pere si tenemos los permisos para hacer lo que queramos)**
 
-**authentication es demostrar que si eres pere seas pere(por ejemplo sabiendo sus credenciales/otras opciones)
+*account*
 
-**authoritzation (no es en pam(se parece a auth)) es una vez sabemos que eres pere si tenemos los permisos para hacer lo que queramos)
+**comprova si esta caducada la compte//si esta fora horari**
 
-*account
+*password*
 
-**comprova si esta caducada la compte//si esta fora horari
+**regles que tenen que veure a com establir/modificar la password/metode d'autetificació**
 
-*password
+*session*
 
-**regles que tenen que veure a com establir/modificar la password/metode d'autetificació
-
-*session
-
-**cosas a hacer antes de iniciar o cerrar la session de usuario
+**cosas a hacer antes de iniciar o cerrar la session de usuario**
 
