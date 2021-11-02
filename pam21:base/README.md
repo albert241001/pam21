@@ -1,11 +1,11 @@
 # PAM
 
--->La seguretat de las aplicacions s'evita mitjançant pam que funcion ade forma modular(es poden posra o no posar els moduls)
+-->La seguretat de las aplicacions s'evita mitjançant pam que funciona de forma modular(es poden posra o no posar els moduls)
 
 -->Has de configurar els programes perque utilitzin el pam
  
 ```
-docker run --rm --name pam.edt.org -h pam.edt.org --network 2hisix -it albert241001/pam:base /bin/bash
+docker run --rm --name pam.edt.org -h pam.edt.org --network 2hisix -it albert241001/pam21:base /bin/bash
 ```
 
 *# The PAM configuration file for the Shadow `chfn' service*
@@ -30,4 +30,20 @@ docker run --rm --name pam.edt.org -h pam.edt.org --network 2hisix -it albert241
 
 **cosas a hacer antes de iniciar o cerrar la session de usuario**
 
-*si sufficient fracasa se ignora y continua con la siguiente autentificacion*
+*control:*
+
+*optional*
+
+**si va be o va malament no te importancia a menys que sigui el unic modul del stack**
+
+*sufficient*
+
+**si accepta continua ja que va be a menys que h hagi un required abans//si fracasa se ignora y continua con la siguiente autentificacion**
+
+*required*
+
+**si falla donara finalment fallo**
+
+*requisite*
+
+**si falla donara fala esta relacionat amb el primer required/requisite**
