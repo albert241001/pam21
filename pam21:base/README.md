@@ -47,3 +47,39 @@ docker run --rm --name pam.edt.org -h pam.edt.org --network 2hisix -it albert241
 *requisite*
 
 **si falla donara fala esta relacionat amb el primer required/requisite**
+
+para iniciar con usuarios ldap primero entrar con un usuario local
+
+-->Al entrar con los usuarios creados (unix01-03) debemos poner los nombres bien para no liarnos
+
+-->instalaremos pam mount//se carga en auth(autentifica) y en session(fa el montatge) pma_mount.xml.conf create dir 100MB en la home 
+
+--> instalar pam ldap y nss y mirar que se confgura al hacer interactivamente
+
+1-->
+
+<volume fstype="tmpfs" mountpoint="/home/%(USER)/tmp" options="size=100M,uid=%(USER),mode=0700" />
+
+2-->
+
+<volume user="unix01" fstype="tmpfs" mountpoint="/home/%(USER)/tmp" options="size=200M,uid=%(USER),mode=0700" />
+
+3-->
+
+<volume user="unix02" fstype="nfs" server="172.18.0.1" path="/mnt/nfs_share" mountpoint="/home/%(USER)/t>
+
+```
+ sudo apt update
+ sudo apt install nfs-kernel-server
+ sudo mkdir -p /mnt/nfs_share
+ sudo chown -R nobody:nogroup /mnt/nfs_share/
+ sudo chmod 777 /mnt/nfs_share/
+ sudo vim /etc/exports
+ sudo exportfs -a
+ sudo systemctl restart nfs-kernel-server
+ sudo ufw allow from 172.18.0.0/16 to any port nfs
+ sudo ufw enable
+ sudo ufw status
+ sudo nano /etc/exports
+	/mnt/nfs_share  172.18.0.0/16(rw,sync,no_subtree_check)
+```
