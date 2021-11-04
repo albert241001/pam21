@@ -57,16 +57,17 @@ para iniciar con usuarios ldap primero entrar con un usuario local
 --> instalar pam ldap y nss y mirar que se confgura al hacer interactivamente
 
 1-->
-
+```
 <volume fstype="tmpfs" mountpoint="/home/%(USER)/tmp" options="size=100M,uid=%(USER),mode=0700" />
-
+```
 2-->
-
+```
 <volume user="unix01" fstype="tmpfs" mountpoint="/home/%(USER)/tmp" options="size=200M,uid=%(USER),mode=0700" />
-
+```
 3-->
-
+```
 <volume user="unix02" fstype="nfs" server="172.18.0.1" path="/mnt/nfs_share" mountpoint="/home/%(USER)/t>
+```
 
 ```
  sudo apt update
