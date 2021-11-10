@@ -9,3 +9,6 @@ docker run --rm --privileged --name pam.edt.org -h pam.edt.org --network 2hisix 
 ```
 
 
+AP=Authentification provider(passwd ldap kerberos)
+IP= Information provider (uid gid shell)
+			 (passwd y ldap)
