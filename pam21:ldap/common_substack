@@ -1,0 +1,1 @@
+auth [default=die success=ignore] pam_succeed_if.so debug uid = 1001
