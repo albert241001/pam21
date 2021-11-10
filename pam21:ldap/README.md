@@ -12,3 +12,27 @@ docker run --rm --privileged --name pam.edt.org -h pam.edt.org --network 2hisix 
 AP=Authentification provider(passwd ldap kerberos)
 IP= Information provider (uid gid shell)
 			 (passwd y ldap)
+
+
+
+include
+llama a otro fichero y si hay un die muere todo el programa
+substack
+llama a otro fichero y si hay un die continua fuera del substack
+bad
+negative pero continua
+die
+negatiu i finalitza
+ok
+succes pero no finalitza
+done
+succes pero finalitza
+
+required
+[success=ok new_authtok_reqd=ok ignore=ignore default=bad]
+requisite
+[success=ok new_authtok_reqd=ok ignore=ignore default=die]
+sufficient
+[success=done new_authtok_reqd=done default=ignore]
+optional
+[success=ok new_authtok_reqd=ok default=ignore]
