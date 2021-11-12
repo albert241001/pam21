@@ -1,8 +1,0 @@
-#
-# The PAM configuration file for the Shadow `chfn' service
-#
-# This allows root to change user infomation without being
-# prompted for a password
-#auth include common_include
-auth substack common_substack
-auth optional pam_echo.so [ Hola ]
