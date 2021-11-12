@@ -19,7 +19,6 @@ mv /opt/docker/pam_mount.conf.xml /etc/security/
 /etc/init.d/nscd start
 getent passwd
 getent group
-pip install python-pam
 
 /bin/bash
 

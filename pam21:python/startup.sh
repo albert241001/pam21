@@ -13,7 +13,7 @@ mv /opt/docker/nslcd.conf /etc/nslcd.conf
 mv /opt/docker/nsswitch.conf /etc/nsswitch.conf
 mv /opt/docker/com* /etc/pam.d/
 mv /opt/docker/pam_mount.conf.xml /etc/security/
-
+mv /opt/docker/chfn /etc/pam.d/chfn
 
 /etc/init.d/nslcd start
 /etc/init.d/nscd start
